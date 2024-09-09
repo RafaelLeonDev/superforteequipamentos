@@ -476,12 +476,107 @@ button {
     }
 }
 
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff8800; /* Verde limão */
+    transform: scale(1.1); /* Aumenta levemente o tamanho do link */
+}
+
+main {
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Seções */
+.hero, #faleconosco, #instagram {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Fundo completo da página */
+#redesocial {
+    background-image: url('imagens/pagina2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* Responsividade */
-@media (max-width: 1024px) {
-    /* Tablet Landscape */
+@media (min-width: 1025px) {
+    /* Computadores e telas grandes */
     .products {
-        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .product-box {
+        max-width: 300px;
+    }
+
+    .buttons {
+        display: flex;
         justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Tablets em modo paisagem */
+    .products {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
 
     .product-box {
@@ -490,7 +585,7 @@ button {
 }
 
 @media (max-width: 768px) {
-    /* Tablet Portrait and Mobile Landscape */
+    /* Tablets em modo retrato e celulares em modo paisagem */
     h1 {
         font-size: 2rem;
     }
@@ -503,9 +598,8 @@ button {
         font-size: 1rem;
     }
 
-    .navbar .nav-links {
+    nav ul {
         flex-direction: column;
-        align-items: center;
     }
 
     .products {
@@ -528,7 +622,7 @@ button {
 }
 
 @media (max-width: 480px) {
-    /* Mobile */
+    /* Celulares */
     h1 {
         font-size: 1.8rem;
     }
