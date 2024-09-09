@@ -14,7 +14,7 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 15px 0;
+    padding: 10px 0;
     position: relative;
     z-index: 1;
 }
@@ -107,12 +107,12 @@ footer {
 
 /* Seção Hero */
 #hero {
-    height: 100vh;
     background-color: #0D0F0E; /* Altere para a cor desejada ou mantenha como estiver */
-    background-image: none; /* Remova a imagem de fundo */
+    background-image: url("imagens/pagina.png"); /* Remova a imagem de fundo */
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -357,11 +357,11 @@ button[type="submit"]:hover {
 }
 
 /* Ajustes para tablets em modo paisagem */
-@media (min-width: 700px) and (max-width: 4000px) and (orientation: landscape) {
+@media (min-width: 800px) and (max-width: 5000px) and (orientation: landscape) {
     .products {
         flex-direction: row;
         justify-content: space-between;
-        gap: 15px;
+        gap: 20px;
     }
     
     .product-box {
