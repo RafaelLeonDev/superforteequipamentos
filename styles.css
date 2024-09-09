@@ -191,9 +191,13 @@ footer {
 
 /* Seção Fale Conosco */
 #faleconosco {
-    padding: 50px 20px;
-    background-color: #ffffff;
-    color: #0D0F0E;
+    background-image: url('imagens/pagina2.png'); /* Certifique-se de que a imagem esteja no diretório correto */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 form {
@@ -381,6 +385,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Seções com o fundo mais escuro */
@@ -547,98 +554,378 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
 }
-
-/* Responsividade */
-@media (min-width: 1025px) {
-    /* Computadores e telas grandes */
-    .products {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .product-box {
-        max-width: 300px;
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 1024px) {
-    /* Tablets em modo paisagem */
-    .products {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .product-box {
-        max-width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Tablets em modo retrato e celulares em modo paisagem */
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    .products {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-box {
-        max-width: 90%;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Celulares */
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 1rem;
-        padding: 10px;
-    }
-}
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Navegação */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #ff8800; /* Verde limão */
+            transform: scale(1.1); /* Aumenta levemente o tamanho do link */
+        }
+        
+        /* Main */
+        main {
+            text-align: center;
+        }
+        
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background-image: url('imagens/pagina.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animações */
+        #hero img {
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            animation: fadeIn 2s forwards; /* Animação de fade-in para a imagem */
+        }
+        
+        #hero h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: scaleUp 1s 0.5s forwards; /* Aumenta com uma animação */
+        }
+        
+        #hero p {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s 1s forwards; /* Sobe de baixo para cima */
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        
+        /* Produtos */
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInProducts 1s ease-in-out forwards 0.5s; /* Delay de 1.5 segundos */
+        }
+        
+        .product-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-box:hover {
+            transform: scale(1.05); /* Aumenta um pouco ao passar o mouse */
+        }
+        
+        .product-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-box img:hover {
+            transform: scale(1.1); /* Dá um leve zoom na imagem */
+        }
+        
+        /* Seção Fale Conosco */
+        #faleconosco {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            color: #0D0F0E;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        button[type="submit"] {
+            background-color: #ff9d00;
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #e68a00;
+        }
+        
+        /* Seção Instagram */
+        #instagram {
+            padding: 50px 20px;
+            background-color: #0D0F0E;
+            color: white;
+        }
+        
+        .instagram-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .instagram-btn {
+            background-color: #C13584;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .instagram-btn:hover {
+            background-color: #e1306c;
+        }
+        
+        /* Botões personalizados para WhatsApp e Instagram */
+        .instagram-btn {
+            background-color: #ff66b2;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .instagram-btn:hover {
+            background-color: #e55c9e;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1EBB61;
+        }
+        
+        .call-btn {
+            background-color: #333;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .call-btn:hover {
+            background-color: #555;
+        }
+        
+        /* Responsividade */
+        
+        /* Computadores e telas grandes */
+        @media (min-width: 1025px) {
+            .products {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        
+            .product-box {
+                max-width: 300px;
+            }
+        
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+        
+        /* Tablets em modo paisagem */
+        @media (max-width: 1024px) {
+            .products {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+        
+            .product-box {
+                max-width: 45%;
+            }
+        }
+        
+        /* Tablets em modo retrato e celulares em modo paisagem */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        
+            h2 {
+                font-size: 1.5rem;
+            }
+        
+            p {
+                font-size: 1rem;
+            }
+        
+            nav ul {
+                flex-direction: column;
+            }
+        
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .product-box {
+                max-width: 90%;
+            }
+        
+            .buttons {
+                flex-direction: column;
+            }
+        
+            button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Celulares */
+            h1 {
+                font-size: 1.8rem;
+            }
+        
+            h2 {
+                font-size: 1.2rem;
+            }
+        
+            .buttons {
+                flex-direction: column;
+            }
+        
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+        
+        /* Celulares em modo paisagem */
+        @media (max-width: 767px) and (orientation: landscape) {
+            /* Ajusta para celulares em modo paisagem */
+            .products {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 10px;
+            }
+        
+            .product-box {
+                max-width: 45%;
+            }
+        
+            .buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        
+            button {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+        }
