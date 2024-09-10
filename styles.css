@@ -117,7 +117,6 @@ footer {
     overflow: hidden;
 }
 
-
 #hero img {
     width: 100%;
     height: auto;
@@ -354,28 +353,17 @@ button[type="submit"]:hover {
         width: 100%;
         margin-bottom: 10px;
     }
-}
 
-/* Ajustes para tablets em modo paisagem */
-@media (min-width: 800px) and (max-width: 5000px) and (orientation: landscape) {
-    .products {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
     }
-    
-    .product-box {
-        max-width: 45%;
+
+    nav ul li {
+        margin: 10px 0;
     }
-    
-    .buttons {
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    button {
-        font-size: 1rem;
-        padding: 10px 15px;
+
+    #hero {
+        height: 80vh;
     }
 }
-
