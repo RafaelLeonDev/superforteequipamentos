@@ -309,7 +309,7 @@ button[type="submit"]:hover {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     h1 {
         font-size: 2rem;
     }
@@ -337,7 +337,7 @@ button[type="submit"]:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     h1 {
         font-size: 1.8rem;
     }
